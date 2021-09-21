@@ -1,9 +1,13 @@
-
 import React, { Fragment, useState } from "react";
+// the following imports were added:
+// import 'bootstrap/dist/css/bootstrap.css';
+import {Modal, Button} from 'react-bootstrap';
 
 const EditTodo = ({ todo }) => {
   const [description, setDescription] = useState(todo.description);
-
+  const [show, setShow] = useState(false); // why m1ssing from original ?
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   //edit description function
 
   const updateDescription = async e => {
@@ -29,9 +33,11 @@ const EditTodo = ({ todo }) => {
     <Fragment>
       <button
         type="button"
-        class="btn btn-warning"
-        data-toggle="modal"
-        data-target={`#id${todo.todo_id}`}
+        className="btn btn-warning"
+        onClick={handleShow}
+        //line 36 replaces the following:
+        // data-toggle="modal"
+        // data-target={`#id${todo.todo_id}`}
       >
         Edit
       </button>
@@ -39,26 +45,31 @@ const EditTodo = ({ todo }) => {
       {/* 
         id = id10
       */}
-      <div
-        class="modal"
-        id={`id${todo.todo_id}`}
+      {/* <div replaced with <Modal */}
+      <Modal
+        show={show}
+        // line 50 replaces the following 2 lines:
+        // className="modal"
+        // id={`id${todo.todo_id}`}
         onClick={() => setDescription(todo.description)}
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Edit Todo</h4>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title">Edit Todo</h4>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
+                onClick={handleClose} 
+                // line 64 replaces:
+                // onClick={() => setDescription(todo.description)}
               >
                 &times;
               </button>
             </div>
 
-            <div class="modal-body">
+            <div className="modal-body">
               <input
                 type="text"
                 className="form-control"
@@ -67,10 +78,10 @@ const EditTodo = ({ todo }) => {
               />
             </div>
 
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 data-dismiss="modal"
                 onClick={e => updateDescription(e)}
               >
@@ -78,16 +89,19 @@ const EditTodo = ({ todo }) => {
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
+                onClick={handleClose}
+                // line 92 replaces:
+                // onClick={() => setDescription(todo.description)}
               >
                 Close
               </button>
             </div>
           </div>
         </div>
-      </div>
+        {/* </div> number 4 replaced with </Modal> */}
+      </Modal>
     </Fragment>
   );
 };

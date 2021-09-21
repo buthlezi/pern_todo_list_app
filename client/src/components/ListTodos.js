@@ -36,12 +36,12 @@ const ListTodos = () => {
     getTodos();
   }, []);
 
-  console.log(todos);
+  // console.log(todos);
 
   return (
     <Fragment>
       {" "}
-      <table class="table mt-5 text-center">
+      <table className="table mt-5 text-center">
         <thead>
           <tr>
             <th>Description</th>

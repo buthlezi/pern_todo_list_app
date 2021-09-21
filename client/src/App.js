@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import InputTodo from './components/InputTodo';
+import ListTodos from './components/ListTodos';
 // components folder is in the same (src)folder as App.js 
+
 import './App.css';
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
   <Fragment>
     <div className="container">
       <InputTodo />
+      <ListTodos />
     </div>
   </Fragment>
   );

@@ -61,6 +61,7 @@ app.post("/todos", async (req, res) => {
     res.json(newTodo.rows[0]); // access first item in 'rows'
   } catch (err) {
     console.error(err.message);
+    
   }
 });
 // update a todo
@@ -94,7 +95,7 @@ app.delete('/todos/:id', async (req, res) => {
 
     res.json("Todo was deleted");
   } catch (err) {
-    console.error(error.message)
+    console.error(err.message)
   }
 });
 

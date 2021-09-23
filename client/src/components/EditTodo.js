@@ -3,9 +3,10 @@ import React, { Fragment, useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.css';
 import {Modal, Button} from 'react-bootstrap';
 
-const EditTodo = ({ todo }) => {
+const EditTodo = ({ todo }) => { // set todo as prop
   const [description, setDescription] = useState(todo.description);
-  const [show, setShow] = useState(false); // why m1ssing from original ?
+  // todo.description sets default value of description which is to be updated
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   //edit description function
@@ -15,7 +16,7 @@ const EditTodo = ({ todo }) => {
     try {
       const body = { description };
       const response = await fetch(
-        `http://localhost:5000/todos/${todo.todo_id}`,
+        `http://localhost:5000/todos/${todo.todo_id}`, // see line 69 in index.js
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

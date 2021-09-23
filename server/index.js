@@ -45,13 +45,13 @@ app.get('/todos/:id', async (req, res) => {
 
 // create a todo
 
-app.post("/todos", async (req, res) => {
+app.post("/todos", async (req, res) => { // http://localhost:5000/todos
   try {
     // res.json(req.body);
-    const { description } = req.body;
+    const { description } = req.body; // destructuring descrition out of request body - see line 10 of InputTodo.js
     const newTodo = await pool.query(
       "INSERT INTO todo (description) VALUES ($1) RETURNING *",
-      [description]
+      [description] // description added to database
     );
 
 // e.g "INSERT INTO todo (description) VALUES ('Hi') RETURNING *"
@@ -68,8 +68,9 @@ app.post("/todos", async (req, res) => {
 
 app.put('/todos/:id', async (req, res) => {
   try {
-    const { id } = req.params;
-    const { description } = req.body;
+    const { id } = req.params; // specifies location in database
+    const { description } = req.body; // specifies description set as body to be destructured
+    // and placed inside database and updated
     const updateTodo = await pool.query(
       "UPDATE todo SET description = $1 WHERE todo_id = $2",
       [description, id]

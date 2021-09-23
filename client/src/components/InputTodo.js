@@ -1,14 +1,15 @@
 import React, { Fragment, useState } from "react";
 
 const InputTodo = () => {
-  const [description, setDescription] = useState("");
-
+  const [description, setDescription] = useState(""); // sets a state called description
+  // which is changed with setDescription
+  // clicking 'Add' button sets the state into the route on line 11 with POST method
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
-      const body = { description };
+      const body = { description };  // assigns description to body
       const response = await fetch("http://localhost:5000/todos", {
-        method: "POST",
+        method: "POST", // see line 48 in index.js
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });

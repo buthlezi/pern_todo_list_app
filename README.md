@@ -11,5 +11,10 @@ To run the app:
 6. Type 'nmp start' to run client on port 3000
 7. This displays a blank todo list
 8. On the right terminal type 'cd server'
-9. Type 'node index' to start the server on port 5000
-10. Feel free to edit, delete or add items as necessary - enjoy !!!
+9. 
+NOTE: The PostgreSQL database needs to be created by typing the commands in server/database.sql.
+This should be done afer logging in as user 'postgres' with a chosen password. 
+The database is 'pernstack' - as shown in server/db.js.
+
+10. Type 'node index' to start the server on port 5000
+11. Feel free to edit, delete or add items as necessary - enjoy !!!

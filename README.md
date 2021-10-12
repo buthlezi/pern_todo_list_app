@@ -12,4 +12,4 @@ To run the app:
 7. This displays a blank todo list
 8. On the right terminal type 'cd server'
 9. Type 'node index' to start the server on port 5000
-10.Feel free to edit, delete or add items as necessary - enjoy !!!
+10. Feel free to edit, delete or add items as necessary - enjoy !!!

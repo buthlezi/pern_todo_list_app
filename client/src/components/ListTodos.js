@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
-
+// Fragment helps in returning multiple elements - 
+// useEffect  allows Effect to hook into useEffect
+// useState allows State to access to (hook into) useState(). 
+// Initial state passed as argument to useState()
 import EditTodo from "./EditTodo";
 
 const ListTodos = () => {         // 
@@ -32,9 +35,9 @@ const ListTodos = () => {         //
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { // calling getTodos() to get data from database
     getTodos();
-  }, []);
+  }, []); // [] tells React to initialize useEffect once
 
   // console.log(todos);
 

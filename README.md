@@ -12,9 +12,9 @@ To run the app:
 7. This displays a blank todo list
 8. On the right terminal type 'cd server'
 9. 
-NOTE: The PostgreSQL database needs to be created by typing the commands in server/database.sql.
+NOTE: Install PostGreSQL and create the database by typing the commands in server/database.sql.
 This should be done afer logging in as user 'postgres' with a chosen password. 
-The database is 'pernstack' - as shown in server/db.js.
+The database can be called 'pernstack' - as shown in server/db.js and server/database.sql
 
 10. Type 'node index' to start the server on port 5000
 11. Feel free to edit, delete or add items as necessary - enjoy !!!

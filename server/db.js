@@ -10,7 +10,7 @@ const Pool = require('pg').Pool;
 
 const pool = new Pool({
   user: 'postgres',
-  password: 'Am@pI#n021',
+  password: '##########',
   host: 'localhost',
   database: 'pernstack',
   port: 5432 // default port for postgres

@@ -10,7 +10,7 @@ const Pool = require('pg').Pool;
 
 const pool = new Pool({
   user: 'postgres',
-  password: '##########',
+  password: '########',
   host: 'localhost',
   database: 'pernstack',
   port: 5432 // default port for postgres
@@ -18,5 +18,5 @@ const pool = new Pool({
 
 module.exports = pool;
 
-// exports pool as a module to be imported by index.js in 
+// exports pool as a module to be imported by index.js in
 // this case and used in the database routes

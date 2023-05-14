@@ -8,7 +8,7 @@ To run the app:
 3. Type 'code .' to open VSCode
 4. Split the VSCode terminal into two halves
 5. On the left type 'cd client'
-6. Type 'nmp start' to run client on port 3000
+6. Type 'npm start' to run client on port 3000
 7. This displays a blank todo list
 8. On the right terminal type 'cd server'
 9. 
